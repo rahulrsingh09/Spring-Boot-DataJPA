@@ -1,0 +1,66 @@
+create table student
+    (studentid     number(10) primary key ,
+     studentname   varchar2(60),
+     age number (3),
+     courseid number (10));
+     
+INSERT INTO student VALUES (1,'Rahul',20,101);
+INSERT INTO student VALUES (2,'Rizwan',20,102);
+INSERT INTO student VALUES (3,'Satnam',25,102);
+INSERT INTO student VALUES (4,'Kuldeep',20,101);
+
+
+
+create table address
+    (studentid number(10) ,
+     city     varchar2(40),
+     state varchar2(20),
+     zipcode   number(6),
+     foreign key (studentid) references student(studentid));
+     
+    INSERT INTO address VALUES (1,'CHD','CHD',160036);
+    INSERT INTO address VALUES (2,'CHD','CHD',160036);
+    INSERT INTO address VALUES (3,'CHD','CHD',160036);
+    INSERT INTO address VALUES (4,'CHD','CHD',160036);
+     
+
+
+create table course
+    (courseid number(10) ,
+     coursename     varchar2(40));
+ 
+INSERT INTO course VALUES (101, 'IT');   
+INSERT INTO course VALUES (102, 'ECE');   
+     
+create table subject
+    (courseid number(10) ,
+     subjectname varchar2(40));
+     
+ INSERT INTO SUBJECT VALUES (101,'C++');
+ INSERT INTO SUBJECT VALUES (101,'C'); 
+ INSERT INTO SUBJECT VALUES (102,'C');   
+ INSERT INTO SUBJECT VALUES (101,'Networking');
+ INSERT INTO SUBJECT VALUES (102,'C++'); 
+ INSERT INTO SUBJECT VALUES (102,'RDBMS');
+  
+create table marks
+    (studentid number(10) ,
+     courseid number(10),
+     subjectname varchar2(40),
+     marks   number(6));
+     
+     INSERT INTO MARKS VALUES (1,101,'C++',30);
+     INSERT INTO MARKS VALUES (1,101,'C',54);
+     INSERT INTO MARKS VALUES (1,101,'Networking',60);
+     
+     INSERT INTO MARKS VALUES (2,102,'C',20); 
+     INSERT INTO MARKS VALUES (2,102,'C++',10);
+     INSERT INTO MARKS VALUES (2,102,'RDBMS',11);
+     
+     INSERT INTO MARKS VALUES (3,102,'C',15); 
+     INSERT INTO MARKS VALUES (3,102,'C++',45);
+     INSERT INTO MARKS VALUES (3,102,'RDBMS',80);
+     
+     INSERT INTO MARKS VALUES (4,101,'C',80); 
+     INSERT INTO MARKS VALUES (4,101,'C++',90);
+     INSERT INTO MARKS VALUES (4,101,'Networking',91);
